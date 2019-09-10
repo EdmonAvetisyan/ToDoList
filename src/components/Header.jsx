@@ -1,0 +1,15 @@
+/* jshint ignore:start */
+import React from 'react';
+
+const Header = ()=>{
+	return (
+    <header>
+      <h1 className="text-center">
+        To do list
+      </h1>
+    </header>
+	);
+};
+
+export default Header;
+/* jshint ignore:end */

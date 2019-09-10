@@ -1,0 +1,198 @@
+body{
+	background-image: linear-gradient(-10deg, #b721ff 20%, #21d4fd 100%);
+}
+*::selection{
+	background-color: #b721ff;
+	color: #fff;
+}
+
+#app{
+	height: 100vh;
+}
+
+#main, #sticky-list{
+	padding: 15px 0;
+}
+
+#main {
+	height: 100%;
+}
+#main :parent{
+	border: 10px solid !important;
+}
+
+h1{
+	color: #fff;
+	user-select: none;
+}
+
+.layer-shadow{
+	box-shadow: rgba(0, 0, 0, 0.2) 5px 0px 10px 0px;
+}
+
+#main form{
+	position: relative;
+	top: 40%;
+	transform: translateY(-50%);
+}
+
+#main form .form-group{
+	border: 2px solid #fff;
+	border-radius: 0.3rem;
+}
+
+#main form .form-control{
+	background-color: transparent;
+	color: #fff;
+}
+
+#main form input{
+	border: none;
+	box-shadow: none;
+}
+#main form input:focus, #main form textarea:focus{
+	box-shadow: inset 0px 44px 100px -100px rgba(255,255,255,1);
+}
+
+#main form input::placeholder{
+	color: #eee;
+	font-size: 1rem;
+}
+
+#main form textarea{
+	height: 155px;
+	max-height: 400px;
+	min-height: 48px;
+	border: none ;
+	box-shadow: none;
+}
+
+#main form textarea::placeholder{
+	color: #eee;
+}
+
+#main form button{	
+	border: 2px solid #fff;
+	line-height: 0;
+}
+
+#main form button:hover{
+	box-shadow: inset 0px 44px 100px -100px rgba(255,255,255,1);
+}
+
+#sticky-list{
+	height: 100vh;
+}
+
+.sticky-box{
+	height: 100%;
+	overflow: hidden;
+	overflow-y: scroll;
+}
+
+.sticky-box .default-sticky{
+	width: 200px;
+  position: absolute;
+  left: 50%;
+  margin-left: -100px;
+  top: 50%;
+  margin-top: -100px;
+}
+
+.sticky{
+	margin-bottom: 20px !important;
+	border: none !important;
+	background: linear-gradient(to bottom, rgb(253,253,203) 0%, rgb(250,247,153) 100%);
+}
+
+.sticky:hover{
+	box-shadow: 0 2px 12px 0 rgba(0,0,0,0.35);
+}
+
+.sticky p{
+	margin-bottom: 0;
+}
+
+.sticky .delete-btn{
+	position: absolute;
+	right: 0;
+	margin-top: -12px;
+	display: none;
+	font-size: .7rem;
+	background: none;
+	outline: none !important;
+	border: none !important;
+	padding: 10px;
+	line-height: 7px;
+}
+
+.sticky .card-header{
+	overflow: hidden;
+	text-overflow: ellipsis;
+	font-weight: 600;
+	background-color: transparent;
+}
+
+.sticky .card-header:hover .delete-btn{
+	display: block;
+}
+
+.sticky .card-body{
+	overflow: hidden;
+	background-color: transparent;
+}
+
+.sticky .card-body p{
+	overflow: hidden;
+}
+
+.sticky .card-text{
+	position: absolute;
+	margin-top: -1px;
+	font-size: 12px;
+}
+
+@media only screen and (max-width: 767px) {
+	#app{
+		height: unset;
+		min-height: 100vh;
+	}
+
+	header{
+		margin-bottom: 16px;
+	}
+
+	h1{
+		font-size: 2rem;
+	}
+
+	.layer-shadow{
+		box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 10px 0px;
+	}
+
+	#main form textarea{
+		height: 125px;
+		max-height: 300px;
+	}
+
+	#sticky-list{
+		height: unset;
+		padding: 15px 0px 0px;
+	}
+
+	.sticky-box{
+		height: unset;
+		overflow: unset;
+		overflow-y: unset;
+	}
+
+	.sticky-box .default-sticky{
+		width: 120px;
+		margin-left: -60px;
+		margin-top: 30px;
+	}
+
+	.sticky{
+		margin-bottom: 15px !important;
+	}
+}
