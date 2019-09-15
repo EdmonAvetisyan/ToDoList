@@ -14,7 +14,7 @@ class Form extends Component{
 		let stickyTitle = e.target.stickyTitle.value.trim();
 		let stickyBody = e.target.stickyBody.value.trim();
 
-		if(stickyBody.length === 0){
+		if(! stickyTitle && ! stickyBody){
 			return;
 		}
 
@@ -56,7 +56,6 @@ class Form extends Component{
 						type="text" 
 						className="form-control form-control-lg" 
 						placeholder="Title..."
-						onChange={this.handleChange} 
 					/>
 					<textarea 
 						name="stickyBody"

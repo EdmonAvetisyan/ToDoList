@@ -113,17 +113,34 @@ h1{
 	margin-bottom: 0;
 }
 
-.sticky .delete-btn{
+.sticky .card-header .btn-group{
 	position: absolute;
+	top: -1px;
 	right: 0;
-	margin-top: -12px;
+	z-index: 1;
 	display: none;
-	font-size: .7rem;
+}
+
+.sticky .card-header .btn-group button{
+	line-height: 0px;
+	color: #212529;
+	border: none;
+	outline: none;
 	background: none;
-	outline: none !important;
-	border: none !important;
-	padding: 10px;
-	line-height: 7px;
+}
+
+.sticky .card-header button:hover{
+	color: #b721ff;
+}
+
+.sticky .edit-btn{
+	font-size: 1.2rem;
+	padding: 0;
+}
+
+.sticky .delete-btn{
+	font-size: 1rem;
+	padding: 9px 3px;
 }
 
 .sticky .card-header{
@@ -133,8 +150,8 @@ h1{
 	background-color: transparent;
 }
 
-.sticky .card-header:hover .delete-btn{
-	display: block;
+.sticky .card-header:hover .btn-group{
+	display: inline-flex;
 }
 
 .sticky .card-body{
@@ -144,6 +161,40 @@ h1{
 
 .sticky .card-body p{
 	overflow: hidden;
+}
+
+.sticky textarea, .sticky input{
+	border: none;
+	background-color: rgba(255,555,255,0.2);
+}
+
+.sticky textarea{
+	height: 75px;
+	min-height: 55px;
+}
+
+.sticky input{
+	height: 24px;
+	padding: 0 0.5rem 0.25rem;
+}
+
+.sticky textarea::placeholder, .sticky input::placeholder{
+	color: #aaa;
+}
+
+.sticky textarea:focus, .sticky input:focus{
+	box-shadow: none;
+	background-color: #fff;
+}
+
+.sticky .card-body button{
+	margin-top: 5px;
+	box-shadow: none;
+	background-color: rgba(255,555,255,0.2);
+}
+
+.sticky .card-body button:hover{
+	background-color: rgba(255,555,255,0.4);
 }
 
 .sticky .card-text{

@@ -1,17 +1,20 @@
 /* jshint ignore:start */
 import React, { Component } from 'react';
 import Sticky from './Sticky';
-import defaultSticky from '../img/default-sticky.png';
+import DefaultSticky from './DefaultSticky';
 
 class StickyList extends Component{
   constructor(props){
     super(props)
-    this.deleteSticky = this.deleteSticky.bind(this);
     this.state = {stickyData: localStorage.getItem('stickyData')}
   }
 
-  deleteSticky(event){
-    const conf = window.confirm('Do you want to delete this sticky ?');
+  deleteSticky(title, event){
+    const conf = window.confirm(
+      `Do you want to delete this sticky ?
+      
+        "${title}"`
+    );
     
     if(conf){
       const index = event.target.attributes['data-index'].value;
@@ -45,13 +48,13 @@ class StickyList extends Component{
                       stickyBody={sticky.stickyBody}
                       date={sticky.date}
                       key={index}
-                      deleteSticky={this.deleteSticky}
+                      deleteSticky={this.deleteSticky.bind(this, sticky.stickyTitle)}
                       data_index={index}
                     />
                   )
                 })
                 :
-                <img src={defaultSticky} alt="sticky" className='default-sticky'/>
+                <DefaultSticky />
               }
             </div>
           </div>
